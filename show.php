@@ -22,7 +22,7 @@ $con = mysqli_connect('localhost','root','','doctor_db');
 if(!$con){
     die("Not connected." .mysqli_error());
 }
-$query = "SELECT * FROM doctor_list";
+$query = "SELECT * FROM hospital";
  $adanprodan = mysqli_query($con,$query);
 
  $count = mysqli_num_rows($adanprodan);
@@ -36,11 +36,7 @@ $query = "SELECT * FROM doctor_list";
                     <th>ID</th>
                     <th>IMAGE</th>
                     <th>NAME</th>
-                    
-                    <th>VALO</th>
-                    <th>PORASUNA</th>
-                    <th>CODE</th>
-                    <th>BOSA</th>
+                    <th>SEBA</th>
                      
                 </tr>
             </thead>
@@ -52,22 +48,15 @@ $query = "SELECT * FROM doctor_list";
 
        $id = $row['ID'];
        $image = $row['image'];
-       $name = $row['pname'];
-       $valo = $row['valo'];
-       $porasuna = $row['porasuna'];
-       $code = $row['code'];
-       $bosa = $row['bosa'];
+       $name = $row['name'];
+       $seba = $row['seba'];
 ?>
     <tbody>
         <tr>
             <td><?php echo $id; ?></td>
-            <td><img width ="50px" src="doctor_pic/<?php echo $image; ?>"></td>
+            <td><img width ="50px" src="hospital_pic/<?php echo $image; ?>"></td>
             <td><?php echo $name; ?></td>
-            <td><?php echo $valo; ?></td>
-            <td><?php echo $porasuna; ?></td>
-            <td><?php echo $code; ?></td>
-            <td><?php echo $bosa; ?></td>
-           
+            <td><?php echo $seba; ?></td>
             
             
         </tr>
